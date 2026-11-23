@@ -11,7 +11,6 @@
     <Property Id="ARPPRODUCTICON" Value="AppIcon" />
     <Property Id="ARPHELPLINK" Value="https://github.com/ManiFast/Verlix" />
     <Property Id="ARPURLINFOABOUT" Value="https://github.com/ManiFast/Verlix" />
-    <Property Id="ARPNOMODIFY" Value="1" />
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
     <WixVariable Id="WixUILicenseRtf" Value="$(var.RepoRoot)\installer\License.rtf" />
     <UIRef Id="WixUI_InstallDir" />
