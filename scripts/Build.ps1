@@ -14,7 +14,7 @@ try {
     if (!(Test-Path $candle)) { throw 'WiX Toolset 3.14 is required to build the MSI.' }
     & $candle -nologo -arch x64 "-dSourceDir=$source" "-dRepoRoot=$root" "-dAppVersion=$version" -out "$out\Product.wixobj" installer\Product.wxs
     if ($LASTEXITCODE -ne 0) { throw "Candle failed: $LASTEXITCODE" }
-    & $light -nologo -ext WixUIExtension -cultures:ru-ru -out "$out\Velrix-$version-x64.msi" "$out\Product.wixobj"
+    & $light -nologo -ext WixUIExtension -ext WixNetFxExtension -cultures:ru-ru -out "$out\Velrix-$version-x64.msi" "$out\Product.wixobj"
     if ($LASTEXITCODE -ne 0) { throw "Light failed: $LASTEXITCODE" }
     $portable = Join-Path $out 'portable'
     New-Item -ItemType Directory -Force $portable | Out-Null

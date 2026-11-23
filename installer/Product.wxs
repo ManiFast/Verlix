@@ -4,8 +4,8 @@
     <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" Platform="x64" />
     <MajorUpgrade DowngradeErrorMessage="Уже установлена более новая версия Velrix." />
     <MediaTemplate EmbedCab="yes" />
-    <Property Id="NETFRAMEWORKRELEASE"><RegistrySearch Id="Net48" Root="HKLM" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" Name="Release" Type="integer" Win64="no" /></Property>
-    <Condition Message="Требуется .NET Framework 4.8 или более новая совместимая версия 4.x.">Installed OR NETFRAMEWORKRELEASE &gt;= 528040</Condition>
+    <PropertyRef Id="WIX_IS_NETFRAMEWORK_48_OR_LATER_INSTALLED" />
+    <Condition Message="Требуется .NET Framework 4.8 или более новая совместимая версия 4.x.">Installed OR WIX_IS_NETFRAMEWORK_48_OR_LATER_INSTALLED</Condition>
     <Condition Message="Этот установщик предназначен для 64-разрядной Windows.">Installed OR VersionNT64</Condition>
     <Icon Id="AppIcon" SourceFile="$(var.RepoRoot)\src\Velrix\Velrix.ico" />
     <Property Id="ARPPRODUCTICON" Value="AppIcon" />
