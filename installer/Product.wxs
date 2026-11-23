@@ -7,7 +7,7 @@
     <PropertyRef Id="WIX_IS_NETFRAMEWORK_48_OR_LATER_INSTALLED" />
     <Condition Message="Требуется .NET Framework 4.8 или более новая совместимая версия 4.x.">Installed OR WIX_IS_NETFRAMEWORK_48_OR_LATER_INSTALLED</Condition>
     <Condition Message="Этот установщик предназначен для 64-разрядной Windows.">Installed OR VersionNT64</Condition>
-    <Icon Id="Velrix.exe" SourceFile="$(var.SourceDir)\Velrix.exe" />
+    <Icon Id="Velrix.exe" SourceFile="$(var.SourceDir)\Mobks.SecurityCheck.exe" />
     <Property Id="ARPPRODUCTICON" Value="Velrix.exe" />
     <Property Id="ARPHELPLINK" Value="https://github.com/ManiFast/Verlix" />
     <Property Id="ARPURLINFOABOUT" Value="https://github.com/ManiFast/Verlix" />
@@ -16,10 +16,10 @@
     <UIRef Id="WixUI_InstallDir" />
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFiles64Folder"><Directory Id="INSTALLFOLDER" Name="Velrix">
-        <Component Id="Application" Guid="*" Win64="yes"><File Id="VelrixExe" Source="$(var.SourceDir)\Velrix.exe" KeyPath="yes">
+        <Component Id="Application" Guid="*" Win64="yes"><File Id="VelrixExe" Source="$(var.SourceDir)\Mobks.SecurityCheck.exe" KeyPath="yes">
           <Shortcut Id="StartMenuShortcut" Directory="ProgramMenuFolder" Name="Velrix" WorkingDirectory="INSTALLFOLDER" Advertise="yes" Icon="Velrix.exe" />
         </File></Component>
-        <Component Id="Configuration" Guid="*" Win64="yes"><File Source="$(var.SourceDir)\Velrix.exe.config" KeyPath="yes" /></Component>
+        <Component Id="Configuration" Guid="*" Win64="yes"><File Source="$(var.SourceDir)\Mobks.SecurityCheck.exe.config" KeyPath="yes" /></Component>
         <Component Id="LicenseFile" Guid="*" Win64="yes"><File Source="$(var.RepoRoot)\LICENSE" Name="LICENSE.txt" KeyPath="yes" /></Component>
       </Directory></Directory>
       <Directory Id="ProgramMenuFolder" />

@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$ExePath)
+﻿param([Parameter(Mandatory=$true)][string]$ExePath)
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName PresentationFramework, PresentationCore, WindowsBase
 $assembly = [Reflection.Assembly]::LoadFrom((Resolve-Path $ExePath))

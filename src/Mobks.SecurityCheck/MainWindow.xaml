@@ -1,4 +1,4 @@
-<Window x:Class="Mobks.SecurityCheck.MainWindow"
+﻿<Window x:Class="Mobks.SecurityCheck.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Velrix" Icon="Velrix.ico" Width="1000" Height="710" MinWidth="820" MinHeight="600"

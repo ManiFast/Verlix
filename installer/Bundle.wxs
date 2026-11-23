@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:bal="http://schemas.microsoft.com/wix/BalExtension" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Bundle Name="Velrix Setup" Version="$(var.AppVersion)" Manufacturer="ManiFast"
+          UpgradeCode="976981FD-0407-4CA5-A212-3558185B37D0" AboutUrl="https://github.com/ManiFast/Verlix"
+          IconSourceFile="$(var.RepoRoot)\src\Mobks.SecurityCheck\Velrix.ico">
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
+      <bal:WixStandardBootstrapperApplication LicenseFile="$(var.RepoRoot)\installer\License.rtf" ShowVersion="yes" />
+    </BootstrapperApplicationRef>
+    <Variable Name="NetFx4Release" Type="numeric" Value="0" />
+    <util:RegistrySearch Id="NetFx4ReleaseSearch" Variable="NetFx4Release" Root="HKLM"
+                        Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" Value="Release" Result="value" Format="raw" Win64="no" />
+    <Chain>
+      <ExePackage Id="NetFx48" DisplayName="Microsoft .NET Framework 4.8" SourceFile="$(var.RuntimePath)"
+                  Name="NetFx48Runtime.exe" Compressed="yes" Permanent="yes" PerMachine="yes" Vital="yes"
+                  DetectCondition="NetFx4Release &gt;= 528040" InstallCommand="/q /norestart" RepairCommand="/repair /q /norestart" />
+      <MsiPackage Id="VelrixMsi" SourceFile="$(var.MsiPath)" Compressed="yes" Vital="yes" />
+    </Chain>
+  </Bundle>
+</Wix>

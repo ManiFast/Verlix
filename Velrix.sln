@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Velrix", "src\Velrix\Velrix.csproj", "{04591477-73B1-412B-9D13-770E214E5CC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobks.SecurityCheck", "src\Mobks.SecurityCheck\Mobks.SecurityCheck.csproj", "{E41B92E4-9AF8-447F-8567-10121EF3BCBB}"
 EndProject
 Global
     GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,9 +10,9 @@ Global
         Release|Any CPU = Release|Any CPU
     EndGlobalSection
     GlobalSection(ProjectConfigurationPlatforms) = postSolution
-        {04591477-73B1-412B-9D13-770E214E5CC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-        {04591477-73B1-412B-9D13-770E214E5CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-        {04591477-73B1-412B-9D13-770E214E5CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-        {04591477-73B1-412B-9D13-770E214E5CC8}.Release|Any CPU.Build.0 = Release|Any CPU
+        {E41B92E4-9AF8-447F-8567-10121EF3BCBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {E41B92E4-9AF8-447F-8567-10121EF3BCBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {E41B92E4-9AF8-447F-8567-10121EF3BCBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {E41B92E4-9AF8-447F-8567-10121EF3BCBB}.Release|Any CPU.Build.0 = Release|Any CPU
     EndGlobalSection
 EndGlobal
