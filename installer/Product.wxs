@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="Velrix" Language="1049" Codepage="1251" Version="$(var.AppVersion)" Manufacturer="ManiFast" UpgradeCode="F8128796-253C-48B2-BF22-890DDDF8A740">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" Platform="x64" />
+    <MajorUpgrade DowngradeErrorMessage="Уже установлена более новая версия Velrix." />
+    <MediaTemplate EmbedCab="yes" />
+    <Property Id="NETFRAMEWORKRELEASE"><RegistrySearch Id="Net48" Root="HKLM" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" Name="Release" Type="integer" Win64="no" /></Property>
+    <Condition Message="Требуется .NET Framework 4.8 или более новая совместимая версия 4.x.">Installed OR NETFRAMEWORKRELEASE &gt;= 528040</Condition>
+    <Condition Message="Этот установщик предназначен для 64-разрядной Windows.">Installed OR VersionNT64</Condition>
+    <Icon Id="AppIcon" SourceFile="$(var.RepoRoot)\src\Velrix\Velrix.ico" />
+    <Property Id="ARPPRODUCTICON" Value="AppIcon" />
+    <Property Id="ARPHELPLINK" Value="https://github.com/ManiFast/Verlix" />
+    <Property Id="ARPURLINFOABOUT" Value="https://github.com/ManiFast/Verlix" />
+    <Property Id="ARPNOMODIFY" Value="1" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.RepoRoot)\installer\License.rtf" />
+    <UIRef Id="WixUI_InstallDir" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder"><Directory Id="INSTALLFOLDER" Name="Velrix">
+        <Component Id="Application" Guid="*" Win64="yes"><File Id="VelrixExe" Source="$(var.SourceDir)\Velrix.exe" KeyPath="yes">
+          <Shortcut Id="StartMenuShortcut" Directory="ProgramMenuFolder" Name="Velrix" WorkingDirectory="INSTALLFOLDER" Advertise="yes" Icon="AppIcon" />
+        </File></Component>
+        <Component Id="Configuration" Guid="*" Win64="yes"><File Source="$(var.SourceDir)\Velrix.exe.config" KeyPath="yes" /></Component>
+        <Component Id="LicenseFile" Guid="*" Win64="yes"><File Source="$(var.RepoRoot)\LICENSE" Name="LICENSE.txt" KeyPath="yes" /></Component>
+      </Directory></Directory>
+      <Directory Id="ProgramMenuFolder" />
+    </Directory>
+    <Feature Id="Complete" Title="Velrix" Level="1"><ComponentRef Id="Application" /><ComponentRef Id="Configuration" /><ComponentRef Id="LicenseFile" /></Feature>
+  </Product>
+</Wix>

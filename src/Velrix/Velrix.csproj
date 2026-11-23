@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType><TargetFramework>net48</TargetFramework><UseWPF>true</UseWPF>
+    <RootNamespace>Mobks.SecurityCheck</RootNamespace><AssemblyName>Velrix</AssemblyName>
+    <Version>1.0.0</Version><AssemblyVersion>1.0.0.0</AssemblyVersion><FileVersion>1.0.0.0</FileVersion>
+    <Product>Velrix</Product><Authors>ManiFast</Authors><LangVersion>7.3</LangVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget><Prefer32Bit>false</Prefer32Bit>
+    <ApplicationIcon>Velrix.ico</ApplicationIcon><ApplicationManifest>app.manifest</ApplicationManifest>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <ItemGroup><Resource Include="Velrix.ico" /></ItemGroup>
+</Project>
